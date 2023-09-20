@@ -1,16 +1,41 @@
 [
   {
     "race": "Dwarf",
-    "class": "Fighter"
+    "class": "Fighter",
+    "background": "Soldier",
+    "name": "Seabeard McStuffins",
+    "strength": "17",
+    "dexterity": "13",
+    "constitution": "15",
+    "intelligence": "8",
+    "wisdom": "12",
+    "charisma": "10",
+    "user_id": "1"
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
+    "race": "Elf",
+    "class": "Cleric",
+    "background": "Acolyte",
+    "name": "Sister Jericho",
+    "strength": "10",
+    "dexterity": "13",
+    "constitution": "15",
+    "intelligence": "8",
+    "wisdom": "17",
+    "charisma": "12",
+    "user_id": "2"
   },
   {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "race": "Human",
+    "class": "Rogue",
+    "background": "Criminal",
+    "name": "Alley Parsins",
+    "strength": "8",
+    "dexterity": "17",
+    "constitution": "13",
+    "intelligence": "15",
+    "wisdom": "12",
+    "charisma": "10",
+    "user_id": "3"
   }
 ]
