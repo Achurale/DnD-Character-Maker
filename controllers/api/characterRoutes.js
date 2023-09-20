@@ -2,7 +2,41 @@ const router = require('express').Router();
 const { Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// 
+// ROUTE TO GET ALL CHARACTERS
+router.get('/characters', async (req, res) => {
+
+})
+
+// ROUTE to GET CHARACTER by ID
+router.get('/characters/:id', async (req, res) => {
+
+})
+
+// ROUTE to UPDATE a CHARACTER (race, class, etc)
+router.put('/characters')
+
+// ROUTE to DELETE a CHARACTER by ID
+router.delete('/characters/:id', async (req, res) => {
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// OLD CODE ----------------------------------------------------
 
 // router.post('/', withAuth, async (req, res) => {
 //   try {
