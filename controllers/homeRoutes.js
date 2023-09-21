@@ -2,8 +2,52 @@ const router = require('express').Router();
 const { Character, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get()
+
+// login route for login page
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+      res.redirect('/homepage');
+      return;
+    }
+    // if user is not logged in, render 'login' page
+    res.render('login');
+  });
+
+// signup route for signup page
+router.get('/signup', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/homepage');
+        return;
+    }
+    // if user is not logged in, render 'signup' page
+    res.render('signup')
+});
+
+// route for homepage
+router.get('/homepage', (req, res) => {
+    // if the user is not logged in, bring back to login page
+    if (!req.session.logged_in) {
+        res.redirect('/login');
+        return;
+    } 
+    res.render('homepage')
+});
 
 
+
+
+
+
+
+
+
+
+
+
+
+// OLD CODE -----------------------------------------
 // router.get('/', async (req, res) => {
 //   try {
 //     // Get all projects and JOIN with user data
@@ -75,7 +119,7 @@ const withAuth = require('../utils/auth');
 // router.get('/login', (req, res) => {
 //   // If the user is already logged in, redirect the request to another route
 //   if (req.session.logged_in) {
-//     res.redirect('/profile');
+//     res.redirect('/homepage');
 //     return;
 //   }
 
