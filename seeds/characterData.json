@@ -2,6 +2,7 @@
   {
     "race": "Dwarf",
     "class": "Fighter",
+    "level": 1,
     "background": "Soldier",
     "name": "Seabeard McStuffins",
     "strength": "17",
@@ -15,6 +16,7 @@
   {
     "race": "Elf",
     "class": "Cleric",
+    "level": 1,
     "background": "Acolyte",
     "name": "Sister Jericho",
     "strength": "10",
@@ -28,6 +30,7 @@
   {
     "race": "Human",
     "class": "Rogue",
+    "level": 1,
     "background": "Criminal",
     "name": "Alley Parsins",
     "strength": "8",
