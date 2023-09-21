@@ -1,8 +1,8 @@
 const User = require('./User');
 const Character = require('./Character');
-const Race = require('./Race')
-const Class = require('./Class')
-const Background = require('./Background')
+const Race = require('./Race');
+const Class = require('./Class');
+const Background = require('./Background');
 
 User.hasMany(Character, {
   foreignKey: 'user_id',
