@@ -15,14 +15,16 @@ Character.init(
       race_id: {
         type: DataTypes.STRING,
         allowNull: false,
+        foreignKey: true,
         references: {
             model: 'race',
             key: 'id'
         }
       },
-      class: {
+      class_id: {
         type: DataTypes.STRING,
         allowNull: false,
+        foreignKey: true,
         references: {
             model: 'class',
             key: 'id'
@@ -35,9 +37,10 @@ Character.init(
           len: [1,20]
         }
       },
-      background: {
+      background_id: {
         type: DataTypes.STRING,
         allowNull: false,
+        foreignKey: true,
         references: {
             model: 'background',
             key: 'id'
@@ -73,6 +76,7 @@ Character.init(
       },
       user_id: {
         type: DataTypes.INTEGER,
+        foreignKey: true,
         references: {
           model: 'user',
           key: 'id',
