@@ -21,8 +21,6 @@ router.get('/signup', (req, res) => {
         res.redirect('/homepage');
         return;
     }
-    // if user is not logged in, render 'signup' page
-    res.render('signup')
 });
 
 // route for homepage
