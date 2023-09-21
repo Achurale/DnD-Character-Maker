@@ -1,3 +1,6 @@
+// ---------------------------------------------------------
+// ROUTES FOR THE CHARACTER LIST PAGE '/characters'
+
 const router = require('express').Router();
 const { Character } = require('../../models');
 const withAuth = require('../../utils/auth');

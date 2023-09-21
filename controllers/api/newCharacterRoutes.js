@@ -1,16 +1,45 @@
+// -------------------------------------------------------
+// ROUTES FOR THE CREATE A CHARACTER PAGE '/newChracter'
+
 const router = require('express').Router();
-const { Race, Class } require('../../models');
+const { Race, Class, Background, Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Routes for race screen
-router.post('api/newCharacter/race', async (req, res) => {
-    const newRace = Race.create(req.body)
-    await res.json(newRace)
 
-})
+router.post('api/newCharacter', withAuth, async (req, res) => {
+    // Adds selected race, class, and background to db
+    try {
+        const newRace = await Race.create(req.body);
+        res.status(200).json(newRace)
+    } catch (err) {
+        res.status(400).json(err)
+    };
 
-// routes for
-router.post
+    try {
+        const newClass = await Class.create(req.body);
+        res.status(200).json(newClass)
+    } catch (err) {
+        res.status(400).json(err)
+    };
+
+    try {
+        const newBackground = await Background.create(req.body);
+        res.status(200).json(newBackground);
+    } catch (err) {
+        res.status(400).json(err)
+    }
+    // -----------------------------------------------------------
+    // adds inputs entered by the user to db. (character name, level, player name, and stats)
+    try {
+    const newCharacter = await Character.create({
+        ...req.body,
+        user_id: req.session.user_id,
+    });
+    res.status(200).json(newCharacter);
+    } catch (err) {
+    res.status(400).json(err);
+    }
+});
 
 
 
