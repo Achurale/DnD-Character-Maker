@@ -44,4 +44,6 @@ Background.belongsTo(Character, {
   foreignKey: 'background_id'
 });
 
+
+
 module.exports = { User, Character, Race, Class, Background };

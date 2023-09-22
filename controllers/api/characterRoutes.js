@@ -6,7 +6,7 @@ const { Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // ROUTE TO GET ALL CHARACTERS
-router.get('api/characters', withAuth, async (req, res) => {
+router.get('/characters', withAuth, async (req, res) => {
     try {
         // gets all characters to create list
         const characterData = await Character.findAll();
@@ -61,6 +61,8 @@ router.delete('/characters/:id', withAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+module.exports = router
 
 
 

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Character, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get()
+// router.get()
 
 // login route for login page
 router.get('/login', (req, res) => {
@@ -33,7 +33,7 @@ router.get('/homepage', (req, res) => {
     res.render('homepage')
 });
 
-
+module.exports = router
 
 
 

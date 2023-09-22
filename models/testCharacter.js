@@ -13,7 +13,7 @@ Character.init(
         autoIncrement: true,
       },
       race_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         foreignKey: true,
         references: {
@@ -22,7 +22,7 @@ Character.init(
         }
       },
       class_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         foreignKey: true,
         references: {
@@ -38,7 +38,7 @@ Character.init(
         }
       },
       background_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         foreignKey: true,
         references: {
