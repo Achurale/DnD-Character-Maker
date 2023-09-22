@@ -1,3 +1,4 @@
+// imported from different branch for testing purposes.
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -11,13 +12,23 @@ Character.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      race: {
-        type: DataTypes.STRING,
+      race_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
+        foreignKey: true,
+        references: {
+            model: 'race',
+            key: 'id'
+        }
       },
-      class: {
-        type: DataTypes.STRING,
+      class_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
+        foreignKey: true,
+        references: {
+            model: 'class',
+            key: 'id'
+        }
       },
       level: {
         type: DataTypes.INTEGER,
@@ -26,9 +37,14 @@ Character.init(
           len: [1,20]
         }
       },
-      background: {
-        type: DataTypes.STRING,
+      background_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
+        foreignKey: true,
+        references: {
+            model: 'background',
+            key: 'id'
+        }
       },
       name: {
         type: DataTypes.STRING,
@@ -60,6 +76,7 @@ Character.init(
       },
       user_id: {
         type: DataTypes.INTEGER,
+        foreignKey: true,
         references: {
           model: 'user',
           key: 'id',
