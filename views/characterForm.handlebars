@@ -12,111 +12,85 @@
   <form action="#">
   
     <fieldset>
-      <div>
+      <div>                           {{!-- Row 1 --}}
         <div class="form-group">
           <label for="character-name">Character's name:</label>
           <input class="form-input" type="text" id="character-name" />
         </div>
+
         <div class="form-group">
           <label for="level">Level:</label>
           <input class="form-input" type="text" id="level" />
+        </div>
+      </div>
+
+      <div>                           {{!--Row 2 Col 1--}}  
+        <div class="form-group">
+          <label for="level">Strength:</label>
+          <input class="form-input" type="text" id="strength" />
+        </div>
+
+        <div class="form-group">
+          <label for="level">Dexterity:</label>
+          <input class="form-input" type="text" id="dexterity" />
+        </div>
+
+        <div class="form-group">
+          <label for="level">Constitution:</label>
+          <input class="form-input" type="text" id="constitution" />
+        </div>
+
+        <div class="form-group">
+          <label for="level">Intelligence:</label>
+          <input class="form-input" type="text" id="intelligence" />
+        </div>
+
+        <div class="form-group">
+          <label for="level">Wisdom:</label>
+          <input class="form-input" type="text" id="wisdom" />
+        </div>
+
+        <div class="form-group">
+          <label for="level">Charisma:</label>
+          <input class="form-input" type="text" id="charisma" />
         </div>
       </div>
 
       <div>
-        <div class="form-group">
-          <label for="level">Level:</label>
-          <input class="form-input" type="text" id="level" />
-        </div>
-
-        <div class="form-group">
-          <label for="level">Level:</label>
-          <input class="form-input" type="text" id="level" />
-        </div>
-
-        <div class="form-group">
-          <label for="level">Level:</label>
-          <input class="form-input" type="text" id="level" />
-        </div>
-
-        <div class="form-group">
-          <label for="level">Level:</label>
-          <input class="form-input" type="text" id="level" />
-        </div>
-
-        <div class="form-group">
-          <label for="level">Level:</label>
-          <input class="form-input" type="text" id="level" />
-        </div>
-
-        <div class="form-group">
-          <label for="level">Level:</label>
-          <input class="form-input" type="text" id="level" />
-        </div>
-
+        <label for="background">Select a background</label>
+        <select name="background" id="background">
+          {{#each }}     passing in object from JS in controller
+          <option>Slower</option>
+          <option>Slow</option>
+          <option selected="selected">Medium</option>
+          <option>Fast</option>
+          <option>Faster</option>
+        </select>
+    
+        <label for="class">Select a class</label>
+        <select name="class" id="class">
+          <optgroup label="Scripts">
+            <option value="jquery">jQuery.js</option>
+            <option value="jqueryui">ui.jQuery.js</option>
+          </optgroup>
+          <optgroup label="Other files">
+            <option value="somefile">Some unknown file</option>
+            <option value="someotherfile">Some other file with a very long option text</option>
+          </optgroup>
+        </select>
+    
+        <label for="race">Select a race</label>
+        <select name="race" id="race">
+          <option>1</option>
+          <option selected="selected">2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
       </div>
 
-
-
-
-
-
-
-
-
-      <label for="speed">Select a speed</label>
-      <select name="speed" id="speed">
-        <option>Slower</option>
-        <option>Slow</option>
-        <option selected="selected">Medium</option>
-        <option>Fast</option>
-        <option>Faster</option>
-      </select>
-  
-      <label for="files">Select a file</label>
-      <select name="files" id="files">
-        <optgroup label="Scripts">
-          <option value="jquery">jQuery.js</option>
-          <option value="jqueryui">ui.jQuery.js</option>
-        </optgroup>
-        <optgroup label="Other files">
-          <option value="somefile">Some unknown file</option>
-          <option value="someotherfile">Some other file with a very long option text</option>
-        </optgroup>
-      </select>
-  
-      <label for="number">Select a number</label>
-      <select name="number" id="number">
-        <option>1</option>
-        <option selected="selected">2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
-        <option>13</option>
-        <option>14</option>
-        <option>15</option>
-        <option>16</option>
-        <option>17</option>
-        <option>18</option>
-        <option>19</option>
-      </select>
-  
-      <label for="salutation">Select a title</label>
-      <select name="salutation" id="salutation">
-        <option disabled selected>Please pick one</option>
-        <option>Mr.</option>
-        <option>Mrs.</option>
-        <option>Dr.</option>
-        <option>Prof.</option>
-        <option>Other</option>
-      </select>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
     </fieldset>
   
   </form>
@@ -126,92 +100,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Your Selections</h3>
-  </div>
-
-  <div>
-    <nav>
-      <button class="btn btn-sm btn-primary">Abilities</button>
-      <button class="btn btn-sm btn-primary">Race</button>
-      <button class="btn btn-sm btn-primary">Class</button>
-      <button class="btn btn-sm btn-primary">Background</button>
-    </nav>
-  </div>
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
 
   {{#if projects.length}}
   <div class="col-md-6 project-list">
@@ -232,3 +120,52 @@
 </div>
 
 <script src="./js/profile.js"></script>
+
+
+{{!--All descriptions are from dndbeyond.com--}}
+const backgrounds = [
+  {
+    bg_name: 'Acolyte',
+    bg_description: 'You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric — performing sacred rites is not the same thing as channeling divine power.'
+  },
+  {
+    background: 'Criminal',
+    bg_description: 'You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of society.'
+  },
+  {
+    background: 'Sage',
+    bg_description: 'You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.'
+  },
+  {
+    background: 'Soldier',
+    bg_description: 'War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield. You might have been part of a standing national army or a mercenary company, or perhaps a member of a local militia who rose to prominence during a recent war.'
+  },
+
+]
+
+
+const classes = [
+  {
+    class_name: 'Cleric', 
+    class_description: 'A priestly champion who wields divine magic in service of a higher power'
+  },
+  {
+    class_name: 'Fighter', 
+    class_description: 'A master of martial combat, skilled with a variety of weapons and armor'
+  },
+  {
+    class_name: 'Rogue', 
+    class_description: 'A scoundrel who uses stealth and trickery to overcome obstacles and enemies'
+  },
+  {
+    class_name: 'Wizard', 
+    class_description: 'A scholarly magic-user capable of manipulating the structures of reality'
+  }
+]
+
+
+const races = [
+  {
+
+  }
+]
