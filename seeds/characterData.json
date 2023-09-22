@@ -1,0 +1,44 @@
+[
+  {
+    "race": "Dwarf",
+    "class": "Fighter",
+    "level": 1,
+    "background": "Soldier",
+    "name": "Seabeard McStuffins",
+    "strength": "17",
+    "dexterity": "13",
+    "constitution": "15",
+    "intelligence": "8",
+    "wisdom": "12",
+    "charisma": "10",
+    "user_id": "1"
+  },
+  {
+    "race": "Elf",
+    "class": "Cleric",
+    "level": 1,
+    "background": "Acolyte",
+    "name": "Sister Jericho",
+    "strength": "10",
+    "dexterity": "13",
+    "constitution": "15",
+    "intelligence": "8",
+    "wisdom": "17",
+    "charisma": "12",
+    "user_id": "2"
+  },
+  {
+    "race": "Human",
+    "class": "Rogue",
+    "level": 1,
+    "background": "Criminal",
+    "name": "Alley Parsins",
+    "strength": "8",
+    "dexterity": "17",
+    "constitution": "13",
+    "intelligence": "15",
+    "wisdom": "12",
+    "charisma": "10",
+    "user_id": "3"
+  }
+]
