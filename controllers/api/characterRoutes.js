@@ -6,7 +6,7 @@ const { Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // ROUTE TO GET ALL CHARACTERS
-router.get('/characters', withAuth, async (req, res) => {
+router.get('/characters', async (req, res) => {
     try {
         // gets all characters to create list
         const characterData = await Character.findAll();
@@ -18,7 +18,7 @@ router.get('/characters', withAuth, async (req, res) => {
 });
 
 // ROUTE to GET CHARACTER by ID
-router.get('api/characters/:id', withAuth, async (req, res) => {
+router.get('/characters/:id', withAuth, async (req, res) => {
     try {
         // gets character based off id
         const characterId = Character.findByPk(req.params.id);
@@ -30,7 +30,7 @@ router.get('api/characters/:id', withAuth, async (req, res) => {
 });
 
 // ROUTE to UPDATE a CHARACTER (race, class, etc)
-router.put('api/characters/:id', withAuth, async (req, res) => {
+router.put('/characters/:id', withAuth, async (req, res) => {
     try {
         Character.update(
             {
