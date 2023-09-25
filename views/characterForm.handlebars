@@ -1,11 +1,11 @@
 {{!-- TO DO: UPDATE ALL CSS!!!!! --}}
 {{!-- ADD SCRIPT TAG TO CONNECT FORM TO JS --}}
 
-{{!-- <div class="row">
+<div class="row">
   <div class="col-auto">
-    <h2>Create A New Character</h2>
+    <h2>Create Your Character</h2>
   </div>
-</div> --}}
+</div>
 
 
 <div class="demo">
@@ -26,69 +26,66 @@
 
       <div>                           {{!--Row 2 Col 1--}}  
         <div class="form-group">
-          <label for="level">Strength:</label>
+          <label for="strength">Strength:</label>
           <input class="form-input" type="text" id="strength" />
         </div>
 
         <div class="form-group">
-          <label for="level">Dexterity:</label>
+          <label for="dexterity">Dexterity:</label>
           <input class="form-input" type="text" id="dexterity" />
         </div>
 
         <div class="form-group">
-          <label for="level">Constitution:</label>
+          <label for="constitution">Constitution:</label>
           <input class="form-input" type="text" id="constitution" />
         </div>
 
         <div class="form-group">
-          <label for="level">Intelligence:</label>
+          <label for="intelligence">Intelligence:</label>
           <input class="form-input" type="text" id="intelligence" />
         </div>
 
         <div class="form-group">
-          <label for="level">Wisdom:</label>
+          <label for="wisdom">Wisdom:</label>
           <input class="form-input" type="text" id="wisdom" />
         </div>
 
         <div class="form-group">
-          <label for="level">Charisma:</label>
+          <label for="charisma">Charisma:</label>
           <input class="form-input" type="text" id="charisma" />
         </div>
       </div>
 
-      <div>
+      <div>                                                     {{!--Row 2 Col 2--}}
         <label for="background">Select a background</label>
         <select name="background" id="background">
-          {{#each }}     passing in object from JS in controller
-          <option>Slower</option>
-          <option>Slow</option>
-          <option selected="selected">Medium</option>
-          <option>Fast</option>
-          <option>Faster</option>
+          {{#each backgrounds as |background|}}                 {{!--passing in object from JS in controller--}}
+            <option>{{background.bg_name}}</option>
+          {{/each}}
         </select>
     
         <label for="class">Select a class</label>
         <select name="class" id="class">
-          <optgroup label="Scripts">
-            <option value="jquery">jQuery.js</option>
-            <option value="jqueryui">ui.jQuery.js</option>
-          </optgroup>
-          <optgroup label="Other files">
-            <option value="somefile">Some unknown file</option>
-            <option value="someotherfile">Some other file with a very long option text</option>
-          </optgroup>
+          {{#each classes as |class|}}    
+            <option>{{class.class_name}}</option>
+          {{/each}}
         </select>
     
         <label for="race">Select a race</label>
         <select name="race" id="race">
-          <option>1</option>
-          <option selected="selected">2</option>
-          <option>3</option>
-          <option>4</option>
+          {{#each races as |race|}}    
+            <option>{{race.race_name}}</option>
+          {{/each}}
         </select>
       </div>
 
-      <div class="form-group">
+      <div>
+        {{#if }}                            {{!--TO DO: Want to access the description key for the element being iterated over in the select--}}
+          <p>bg_description</p>         {{!--Might have to use a partial to access the description of the current selection from each menu--}}
+        {{/if}}
+      </div>
+
+      <div class="form-group">                        {{!--Row 3--}}
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </fieldset>
@@ -119,7 +116,7 @@
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="./js/profile.js"></script>          {{!--TO DO: Add script to accept the character form--}}
 
 
 {{!--All descriptions are from dndbeyond.com--}}
@@ -129,15 +126,15 @@ const backgrounds = [
     bg_description: 'You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric — performing sacred rites is not the same thing as channeling divine power.'
   },
   {
-    background: 'Criminal',
+    bg_name: 'Criminal',
     bg_description: 'You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of society.'
   },
   {
-    background: 'Sage',
+    bg_name: 'Sage',
     bg_description: 'You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.'
   },
   {
-    background: 'Soldier',
+    bg_name: 'Soldier',
     bg_description: 'War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield. You might have been part of a standing national army or a mercenary company, or perhaps a member of a local militia who rose to prominence during a recent war.'
   },
 
@@ -166,6 +163,49 @@ const classes = [
 
 const races = [
   {
+    race_name: 'dwarf',
+    race_description: 'Kingdoms rich in ancient grandeur, halls carved into the roots of mountains, the echoing of picks 
+    and hammers in deep mines and blazing forges, a commitment to clan and tradition, and a burning hatred of goblins and
+     orcs — these common threads unite all dwarves.'
+  
+    {{!-- Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal. Though they stand 
+    well under 5 feet tall, dwarves are so broad and compact that they can weigh as much as a human standing nearly two feet 
+    taller. Their courage and endurance are also easily a match for any of the larger folk. --}}
 
-  }
+  },
+  {
+    race_name: 'elf',
+    race_description: 'Elves are a magical people of otherworldly grace, living in the world but not entirely part of it.
+      They live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie 
+      light, where soft music drifts through the air and gentle fragrances waft on the breeze. Elves love nature and magic, 
+      art and artistry, music and poetry, and the good things of the world.'
+
+    {{!-- With their unearthly grace and fine features, elves appear hauntingly beautiful to humans and members of many 
+    other races. They are slightly shorter than humans on average, ranging from well under 5 feet tall to just over 6 feet. 
+    They are more slender than humans, weighing only 100 to 145 pounds. Males and females are about the same height, and males 
+    are only marginally heavier than females. --}}
+  },
+  {
+    race_name: 'halfling',
+    race_description: 'The comforts of home are the goals of most halflings’ lives: a place to settle in peace and quiet, 
+      far from marauding monsters and clashing armies; a blazing fire and a generous meal; fine drink and fine conversation. 
+      Though some halflings live out their days in remote agricultural communities, others form nomadic bands that travel 
+      constantly, lured by the open road and the wide horizon to discover the wonders of new lands and peoples. But even these 
+      wanderers love peace, food, hearth, and home, though home might be a wagon jostling along an dirt road or a raft floating downriver.'
+
+    {{!-- The diminutive halflings survive in a world full of larger creatures by avoiding notice or, barring that, avoiding offense. 
+    Standing about 3 feet tall, they appear relatively harmless and so have managed to survive for centuries in the shadow of 
+    empires and on the edges of wars and political strife. They are inclined to be stout, weighing between 40 and 45 pounds. --}}
+  },
+  {
+    race_name: 'human',
+    race_description: 'In the reckonings of most worlds, humans are the youngest of the common races, late to arrive on the 
+      world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it is because of their shorter lives that 
+      they strive to achieve as much as they can in the years they are given. Or maybe they feel they have something to prove to 
+      the elder races, and that’s why they build their mighty empires on the foundation of conquest and trade. Whatever drives them, 
+      humans are the innovators, the achievers, and the pioneers of the worlds.'
+
+    {{!-- With their penchant for migration and conquest, humans are more physically diverse than other common races. There is no 
+    typical human. An individual can stand from 5 feet to a little over 6 feet tall and weigh from 125 to 250 pounds.  --}}
+  }  
 ]
