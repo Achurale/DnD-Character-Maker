@@ -3,34 +3,38 @@
 
 const router = require('express').Router();
 const { Character } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 // ROUTE TO GET ALL CHARACTERS
-router.get('/characters', withAuth, async (req, res) => {
+router.get('/characters', async (req, res) => {
     try {
         // gets all characters to create list
         const characterData = await Character.findAll();
-        res.status(200).json(characterData);
+        console.log(characterData);
+        const character = characterData.get({ plain: true })
+        res.status(200).json(character);
     } catch (err) {
         // error if there are no characters
-        res.status(400).json(err)
+        res.status(400).json("Oops! Looks like you currently have no saved characters!")
     }
 });
 
 // ROUTE to GET CHARACTER by ID
-router.get('api/characters/:id', withAuth, async (req, res) => {
+router.get('/characters/:id', async (req, res) => {
     try {
         // gets character based off id
-        const characterId = Character.findByPk(req.params.id);
+        const characterIdData = Character.findByPk(req.params.id);
+        console.log(characterIdData)
+        const characterId = characterIdData.get({ plain: true })
         res.status(200).json(characterId);
         // error if character id doens't exist
     } catch (err) {
-        res.status(400).json(err)
+        res.status(400).json("Oops! Looks like this character id does not exist.")
     }
 });
 
 // ROUTE to UPDATE a CHARACTER (race, class, etc)
-router.put('api/characters/:id', withAuth, async (req, res) => {
+router.put('/characters/:id', async (req, res) => {
     try {
         Character.update(
             {
@@ -48,7 +52,7 @@ router.put('api/characters/:id', withAuth, async (req, res) => {
 })
 
 // ROUTE to DELETE a CHARACTER by ID
-router.delete('/characters/:id', withAuth, async (req, res) => {
+router.delete('/characters/:id', async (req, res) => {
     try {
         Character.delete(
             {
@@ -62,7 +66,7 @@ router.delete('/characters/:id', withAuth, async (req, res) => {
     }
 });
 
-module.exports = router
+module.exports = router;
 
 
 

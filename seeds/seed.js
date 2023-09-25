@@ -2,10 +2,10 @@ const sequelize = require('../config/connection');
 const { User, Character, Race, Class, Background } = require('../models');
 
 const userData = require('./userData.json');
-const characterData = require('./testcharacterData.json');
-const raceData = require('./testraceData.json');
-const classData = require('./testclassData.json');
-const backgroundData = require('./testbackgroundData.json');
+const characterData = require('./characterData.json');
+const raceData = require('./raceData.json');
+const classData = require('./classData.json');
+const backgroundData = require('./backgroundData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -15,19 +15,6 @@ const seedDatabase = async () => {
   await Background.bulkCreate(backgroundData)
   await User.bulkCreate(userData);
   await Character.bulkCreate(characterData)
-
-  // OLD CODE --------------------------------------
-  // const users = await User.bulkCreate(userData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
-  // for (const project of projectData) {
-  //   await Project.create({
-  //     ...project,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
 
   process.exit(0);
 };
