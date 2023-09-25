@@ -2,13 +2,12 @@ const router = require('express').Router();
 const { Character, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// router.get()
 
 // login route for login page
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/homepage');
+      res.redirect('/');
       return;
     }
     // if user is not logged in, render 'login' page
@@ -18,20 +17,30 @@ router.get('/login', (req, res) => {
 // signup route for signup page
 router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/homepage');
+        res.redirect('/');
         return;
     }
 });
 
 // route for homepage
-router.get('/homepage', (req, res) => {
-    // if the user is not logged in, bring back to login page
-    if (!req.session.logged_in) {
-        res.redirect('/login');
-        return;
-    } 
+router.get('/', (req, res) => {
     res.render('homepage')
 });
+
+// route for choices screen
+router.get('/choices', (req, res) => {
+    res.render('choices')
+})
+
+// route to make new character
+router.get('/newCharacter', (req, res) => {
+    res.render('characterForm')
+})
+
+// route to view characters
+router.get('/characters', (req, res) => {
+    res.render('characters')
+})
 
 module.exports = router
 
