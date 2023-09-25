@@ -10,10 +10,12 @@ router.get('/characters', async (req, res) => {
     try {
         // gets all characters to create list
         const characterData = await Character.findAll();
-        res.status(200).json(characterData);
+        console.log(characterData);
+        const character = characterData.get({ plain: true })
+        res.status(200).json(character);
     } catch (err) {
         // error if there are no characters
-        res.status(400).json(err)
+        res.status(400).json("Oops! Looks like you currently have no saved characters!")
     }
 });
 
@@ -21,11 +23,13 @@ router.get('/characters', async (req, res) => {
 router.get('/characters/:id', withAuth, async (req, res) => {
     try {
         // gets character based off id
-        const characterId = Character.findByPk(req.params.id);
+        const characterIdData = Character.findByPk(req.params.id);
+        console.log(characterIdData)
+        const characterId = characterIdData.get({ plain: true })
         res.status(200).json(characterId);
         // error if character id doens't exist
     } catch (err) {
-        res.status(400).json(err)
+        res.status(400).json("Oops! Looks like this character id does not exist.")
     }
 });
 
