@@ -3,7 +3,7 @@
 
 const router = require('express').Router();
 const { Character } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 // ROUTE TO GET ALL CHARACTERS
 router.get('/characters', async (req, res) => {
@@ -20,7 +20,7 @@ router.get('/characters', async (req, res) => {
 });
 
 // ROUTE to GET CHARACTER by ID
-router.get('/characters/:id', withAuth, async (req, res) => {
+router.get('/characters/:id', async (req, res) => {
     try {
         // gets character based off id
         const characterIdData = Character.findByPk(req.params.id);
@@ -34,7 +34,7 @@ router.get('/characters/:id', withAuth, async (req, res) => {
 });
 
 // ROUTE to UPDATE a CHARACTER (race, class, etc)
-router.put('/characters/:id', withAuth, async (req, res) => {
+router.put('/characters/:id', async (req, res) => {
     try {
         Character.update(
             {
@@ -52,7 +52,7 @@ router.put('/characters/:id', withAuth, async (req, res) => {
 })
 
 // ROUTE to DELETE a CHARACTER by ID
-router.delete('/characters/:id', withAuth, async (req, res) => {
+router.delete('/characters/:id', async (req, res) => {
     try {
         Character.delete(
             {
@@ -66,7 +66,7 @@ router.delete('/characters/:id', withAuth, async (req, res) => {
     }
 });
 
-module.exports = router
+module.exports = router;
 
 
 
