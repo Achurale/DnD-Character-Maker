@@ -5,8 +5,8 @@ const router = require('express').Router();
 const { Race, Class, Background, Character } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
-router.post('api/newCharacter', withAuth, async (req, res) => {
+// api/newCharacter/newCharacter
+router.post('/newCharacter', async (req, res) => {
     // Adds selected race, class, and background to db
     try {
         const newRace = await Race.create(req.body);
@@ -40,6 +40,15 @@ router.post('api/newCharacter', withAuth, async (req, res) => {
     res.status(400).json(err);
     }
 });
+
+router.post('/newCharacter/newRace', async (req, res) => {
+    try {
+        const newRace = await Race.create(req.body);
+        res.status(200).json(newRace)
+    } catch (err) {
+        res.status(400).json(err)
+    };
+}) 
 
 module.exports = router;
 

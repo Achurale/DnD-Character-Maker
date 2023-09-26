@@ -1,8 +1,8 @@
 const User = require('./User');
-const Character = require('./testCharacter');
-const Race = require('./testRace');
-const Class = require('./testClass');
-const Background = require('./testBackground');
+const Character = require('./Character');
+const Race = require('./Race');
+const Class = require('./Class');
+const Background = require('./Background');
 
 // many character to one user
 User.hasMany(Character, {

@@ -5,7 +5,8 @@ const router = require('express').Router();
 const { Character } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
-// ROUTE TO GET ALL CHARACTERS
+// ROUTE TO GET ALL CHARACTERS  
+// api/characters/characters
 router.get('/characters', async (req, res) => {
     try {
         // gets all characters to create list
@@ -20,6 +21,7 @@ router.get('/characters', async (req, res) => {
 });
 
 // ROUTE to GET CHARACTER by ID
+// api/characters/characters/:id
 router.get('/characters/:id', async (req, res) => {
     try {
         // gets character based off id
@@ -34,6 +36,7 @@ router.get('/characters/:id', async (req, res) => {
 });
 
 // ROUTE to UPDATE a CHARACTER (race, class, etc)
+// api/characters/characters/:id
 router.put('/characters/:id', async (req, res) => {
     try {
         Character.update(
