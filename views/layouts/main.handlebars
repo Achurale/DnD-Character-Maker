@@ -11,23 +11,25 @@
   <title>Home Page - Dungeons & Dragons Character Generator</title>
 </head>
 
-<body>
+<body class="bg-secondary">
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
+    <header class="display-flex justify-space-between align-center p-2 border-bottom border-danger border-2">
+      <h1 class="text-center">
         <div>
-          <a href="/">Dungeons & Dragons Character Generator</a>
+          <a href="/">Dungeons & Dragons Character Maker</a>
         </div>
       </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        {{!-- <a href="/profile">profile</a> | --}}
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-          <a href="/login.handlebars">login</a>
-        {{/if}}
-      </nav>
+      <div class="text-end">
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+          {{!-- <a href="/profile">profile</a> | --}}
+          <button class="no-button" id="logout">Logout</button>
+          {{else}}
+            <a href="/login.handlebars" id="login">Login</a>
+          {{/if}}
+        </nav>
+      </div>
     </header>
 
     <main class="container container-fluid mt-5">
@@ -35,14 +37,16 @@
       {{{ body }}}
     </main>
 
-    <footer>
+    <footer class="text-center border-top border-danger border-2">
       <div>
-        <p>Contact Us!</p>
+        <h3>Contact Us!</h3>
       </div>
       <div>
-        <a>name1</a>          {{!-- We can add out Github OR linkedIn accounts OR email here --}}
-        <a>name2</a>
         <a href="https://github.com/aridel96">Arianna</a>
+        -
+        <a href="https://github.com/BreePrimmer">Bree</a>          {{!-- We can add out Github OR linkedIn accounts OR email here --}}
+        -
+        <a href="https://github.com/Achurale">Chuyi</a>
       </div>
     </footer>
   </div>

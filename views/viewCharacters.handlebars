@@ -8,8 +8,8 @@
     <div>       {{!--Col 1--}}
         <nav>
             <ul>
-                {{#each}}              {{!--Gets list of characters created by this user--}}
-                    <li></li>
+                {{#each Character as |character|}}              {{!--Gets list of characters created by this user--}}
+                    <li>{{character.name}}</li>
                     <button>View</button>
                     <button>Delete</button>
                 {{/each}}              {{!--How can I access the information of that character in the other div element--}}
