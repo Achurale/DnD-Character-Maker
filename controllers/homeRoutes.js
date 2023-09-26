@@ -28,8 +28,8 @@ router.get('/', (req, res) => {
 });
 
 // route for choices screen
-router.get('/choices', (req, res) => {
-    res.render('choices')
+router.get('/profile', (req, res) => {
+    res.render('profile')
 })
 
 // route to make new character
@@ -39,7 +39,7 @@ router.get('/newCharacter', (req, res) => {
 
 // route to view characters
 router.get('/characters', (req, res) => {
-    res.render('characters')
+    res.render('viewCharacters')
 })
 
 module.exports = router
