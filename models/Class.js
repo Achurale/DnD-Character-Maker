@@ -1,3 +1,4 @@
+// imported from different branch for testing purposes.
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
