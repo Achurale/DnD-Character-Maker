@@ -8,8 +8,8 @@
     <div>       {{!--Col 1--}}
         <nav>
             <ul>
-                {{#each}}              {{!--Gets list of characters created by this user--}}
-                    <li></li>
+                {{#each character as |character|}}              {{!--Gets list of characters created by this user--}}
+                    <li></li>                           {{!--Render (get) character id}}
                     <button>View</button>
                     <button>Delete</button>
                 {{/each}}              {{!--How can I access the information of that character in the other div element--}}
@@ -18,7 +18,7 @@
     </div>
     <div>                   {{!--Col 2--}}
         <div>
-            <h2>{{character_name}}</h2>
+            <h2>{{character.name}}</h2>
             <p>{{level}}</p>                {{!--Look at Concat helper in Handlebars--}}
         </div>
 
