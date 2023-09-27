@@ -57,36 +57,43 @@
       </div>
 
       <div>                                                     {{!--Row 2 Col 2--}}
-        <label for="background">Select a background</label>
-        <select name="background" id="background">
-          {{#each Background as |background|}}                 {{!--passing in object from JS in controller--}}
+        <div id="bg-menu">
+          <label for="background">Select a background</label>
+          <select name="background" id="background">
+            {{#each Background as |background|}}                 {{!--passing in object from JS in controller--}}
             <option>{{background.name}}</option>
-          {{/each}}
-        </select>
-    
-        <label for="class">Select a class</label>
-        <select name="class" id="class">
-          {{#each class as |class|}}    
+            {{/each}}
+          </select>
+        </div>
+
+        <div id="class-menu">
+          <label for="class">Select a class</label>
+          <select name="class" id="class">
+            {{#each class as |class|}}    
             <option>{{class.name}}</option>
-          {{/each}}
-        </select>
-    
-        <label for="race">Select a race</label>
-        <select name="race" id="race">
-          {{#each race as |race|}}    
+            {{/each}}
+          </select>
+        </div>
+
+        <div id="race-menu">
+          <label for="race">Select a race</label>
+          <select name="race" id="race">
+            {{#each race as |race|}}    
             <option>{{race.name}}</option>
-          {{/each}}
-        </select>
+            {{/each}}
+          </select>
+        </div>
       </div>
 
       <div>                 {{!--Row 2 Col 3--}}
-        {{#if }}                            {{!--TO DO: Want to access the description key for the element being iterated over in the select--}}
+        {{#if bg-menu}}                            {{!--TO DO: Want to access the description key for the element being iterated over in the select--}}
+          {{!--Call custom helper defined below--}}
           <p>bg_description</p>         {{!--Might have to use a partial to access the description of the current selection from each menu--}}
         {{/if}}
       </div>
 
       <div class="form-group">                        {{!--Row 3--}}
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary" id="charForm">Create</button>
       </div>
     </fieldset>
   
@@ -202,10 +209,46 @@ const races = [
     race_description: 'In the reckonings of most worlds, humans are the youngest of the common races, late to arrive on the 
       world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it is because of their shorter lives that 
       they strive to achieve as much as they can in the years they are given. Or maybe they feel they have something to prove to 
-      the elder races, and that’s why they build their mighty empires on the foundation of conquest and trade. Whatever drives them, 
+      the elder races, and that's why they build their mighty empires on the foundation of conquest and trade. Whatever drives them, 
       humans are the innovators, the achievers, and the pioneers of the worlds.'
 
     {{!-- With their penchant for migration and conquest, humans are more physically diverse than other common races. There is no 
     typical human. An individual can stand from 5 feet to a little over 6 feet tall and weigh from 125 to 250 pounds.  --}}
   }  
 ]
+
+
+
+{{!--CUSTOM HELPER!--}}
+if ___ menu is selected
+  then look at user input (ex: bgEl = document.getElementById('bg-menu'))
+
+  for each - {{#each background as |background|}} in JS
+    if background.name == bgEL 
+      then <p>{{bg.description</p>
+
+
+Handlebars.registerHelper("getDescription", function(elementId) {
+  let bg_menu
+  let class_menu
+  let race_menu
+
+  let bg_description
+  let class_description
+  let race_description
+
+
+  switch(elementId) {
+    case "bg-menu":
+      bg_menu = document.getElementById("elementId")
+
+      {{#each background as |background|}}
+      if(background.)
+    case "class-menu":
+      class_menu = document.getElementById("elementId")
+    case "race-menu":
+      race_menu = document.getElementById("elementId")
+  } 
+
+})
+
