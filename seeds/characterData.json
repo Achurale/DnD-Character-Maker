@@ -12,5 +12,47 @@
         "wisdom": 12,
         "charisma": 10,
         "user_id": 1 
+    },
+    {
+        "race_id": 2,
+        "class_id": 4,
+        "level": 1,
+        "background_id": 1,
+        "name": "Rayla Vinnian",
+        "strength": 7,
+        "dexterity": 15,
+        "constitution": 12,
+        "intelligence": 18,
+        "wisdom": 16,
+        "charisma": 8,
+        "user_id": 1 
+    },
+    {
+        "race_id": 4,
+        "class_id": 3,
+        "level": 1,
+        "background_id": 2,
+        "name": "Vik Mogor",
+        "strength": 10,
+        "dexterity": 18,
+        "constitution": 12,
+        "intelligence": 8,
+        "wisdom": 8,
+        "charisma": 18,
+        "user_id": 2 
+    },
+    {
+        "race_id": 2,
+        "class_id": 2,
+        "level": 1,
+        "background_id": 4,
+        "name": "Hyon Elrim",
+        "strength": 18,
+        "dexterity": 18,
+        "constitution": 18,
+        "intelligence": 8,
+        "wisdom": 8,
+        "charisma": 8,
+        "user_id": 2 
     }
 ]

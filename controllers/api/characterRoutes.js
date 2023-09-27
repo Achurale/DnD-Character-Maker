@@ -3,7 +3,7 @@
 
 const router = require('express').Router();
 const { Character } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 // ROUTE TO GET ALL CHARACTERS  
 // api/characters/characters
