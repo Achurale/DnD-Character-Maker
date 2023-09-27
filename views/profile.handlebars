@@ -1,11 +1,25 @@
 {{!--These should be card options. Does this need JS to link to each page?--}}
+<main>
+  <h2 class="text-center">Welcome, {{name}}!</h2>
 
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
+  <div class="container text-center">
+    <div class="row">
+      <div id="view" class="col">
+        <a href="/characters">
+          <img src="./Images/blankprofile.png" class="icon">
+          <p class="fs-2 ">View Your Characters</p>
+        </a>
+      </div>
 
+<<<<<<< feature-style
+      <div class="col">
+        <a href="/views/characterForm.handlebars">
+          <img src="./Images/d20sil.png" class="icon">
+          <p class="fs-2 ">Create A New Character</p>
+        </a>
+      </div>
+    </div>
+=======
 <div>
   <div>
     <a href="/characters">
@@ -16,5 +30,6 @@
     <a href="/characterForm">
       <h3>Create A New Character</h3>
     </a>
+>>>>>>> main
   </div>
-</div>
+</main>
