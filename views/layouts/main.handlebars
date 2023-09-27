@@ -19,15 +19,22 @@
           <a href="/">Dungeons & Dragons Character Maker</a>
         </div>
       </h1>
-      <div class="text-end">
-        <nav>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-          {{!-- <a href="/profile">profile</a> | --}}
-          <button class="no-button" id="logout">Logout</button>
-          {{else}}
-            <a href="/login" id="login">Login</a>
-          {{/if}}
+      <div>
+        <nav class="list-group">
+          <div class="container row">
+            <!-- Conditionally render login or logout links -->
+            <ul class="list-group list-group-horizontal right-justified">
+              {{#if logged_in}}
+              {{!-- <a href="/profile">profile</a> | --}}
+              <li class="list-group-item bg-secondary"><button class="no-button" id="logout">Logout</button></li>
+              {{else}}
+              <li class="list-group-item bg-secondary"><a href="/login" id="login">Login</a></li>
+              {{/if}}
+              <li><a href="/profile" class="list-group-item bg-secondary">Profile</a></li>
+              <li><a href="/newCharacter" class="list-group-item bg-secondary">characterForm</a></li>
+              <li><a href="/characters" class="list-group-item bg-secondary">viewCharacters</a></li>
+            </ul>
+          </div>
         </nav>
       </div>
     </header>
@@ -37,7 +44,7 @@
       {{{ body }}}
     </main>
 
-    <footer class="text-center border-top border-danger border-2 fixed-bottom p-4">
+    <footer class="text-center border-top border-danger border-2 p-4 m-4">
       <div>
         <h3>Contact Us!</h3>
       </div>
