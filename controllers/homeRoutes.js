@@ -34,7 +34,7 @@ router.get('/profile', (req, res) => {
 
 // route to make new character
 router.get('/newCharacter', (req, res) => {
-    res.render('characterForm')
+    res.render('characterForm',)
 })
 
 // route to view characters
