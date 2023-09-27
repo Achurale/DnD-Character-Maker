@@ -1,4 +1,4 @@
-header, .project:not(:last-child) {
+header {
   border-bottom: 1px solid #ccc;
 }
 
@@ -17,8 +17,20 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+#dragonIMG {
+  width: 500px;
+  margin: 20px;
+  padding:0;
+}
+
+a {
+  color:maroon;
+}
+
+a:hover {
+  color: red;
+}
+
+.icon {
+  width: 50px;
 }
