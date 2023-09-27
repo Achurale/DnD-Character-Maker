@@ -59,22 +59,22 @@
       <div>                                                     {{!--Row 2 Col 2--}}
         <label for="background">Select a background</label>
         <select name="background" id="background">
-          {{#each backgrounds as |background|}}                 {{!--passing in object from JS in controller--}}
-            <option>{{background.bg_name}}</option>
+          {{#each Background as |background|}}                 {{!--passing in object from JS in controller--}}
+            <option>{{background.name}}</option>
           {{/each}}
         </select>
     
         <label for="class">Select a class</label>
         <select name="class" id="class">
-          {{#each classes as |class|}}    
-            <option>{{class.class_name}}</option>
+          {{#each class as |class|}}    
+            <option>{{class.name}}</option>
           {{/each}}
         </select>
     
         <label for="race">Select a race</label>
         <select name="race" id="race">
-          {{#each races as |race|}}    
-            <option>{{race.race_name}}</option>
+          {{#each race as |race|}}    
+            <option>{{race.name}}</option>
           {{/each}}
         </select>
       </div>
@@ -99,7 +99,7 @@
 
 
 
-  {{#if projects.length}}
+  {{!-- {{#if projects.length}}
   <div class="col-md-6 project-list">
     <h3>Current Projects:</h3>
 
@@ -115,7 +115,7 @@
     {{/each}}
   </div>
   {{/if}}
-</div>
+</div> --}}
 
 <script src="./js/profile.js"></script>          {{!--TO DO: Add script to accept the character form--}}
 
