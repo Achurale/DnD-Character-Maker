@@ -5,7 +5,10 @@
   <div class="text-center">
     <img src="./Images/HomePage-DnD Character IMG.png" alt="powerful dungeons and dragons character art created by Valiant Graphics" class="img-thumbnail" id="dragonIMG">
     <h3>Let the adventures begin!</h3>
+    {{#if logged_in}}
+    {{else}}
     <h2 class="fw-bold"><a href="/signUp">Sign Up</a></h2>
+    {{/if}}
   </div>
 
   {{!-- <button type="button" class="btn btn-primary">Sign Up</button> --}}

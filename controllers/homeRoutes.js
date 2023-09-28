@@ -25,17 +25,22 @@ router.get('/signup', (req, res) => {
 });
 
 // route for homepage
-router.get('/', (req, res) => {
-    res.render('homepage')
+router.get('/', async (req, res) => {
+    res.render('homepage', {logged_in: req.session.logged_in})
 });
 
 // route for choices screen
 router.get('/profile', (req, res) => {
-    res.render('profile')
+    if (req.session.logged_in) {
+    res.render('profile', {logged_in: req.session.logged_in})
+    } else {
+        res.redirect('/')
+    }
 })
 
 // route to make new character
 router.get('/newCharacter', async (req, res) => {
+    if (req.session.logged_in) {
     const roleData = await Role.findAll();
     const role = roleData.map(role => role.get({plain:true}));
 
@@ -47,11 +52,15 @@ router.get('/newCharacter', async (req, res) => {
     console.log(race)
     console.log(background)
     console.log(role)
-    res.render('characterForm', {role, background, race})
+    res.render('characterForm', {role, background, race, logged_in: req.session.logged_in})
+    } else {
+        res.redirect('/')
+    }
 })
 
 // route to view characters
 router.get('/characters', async (req, res) => {
+    if (req.session.logged_in) {
     const characterData = await Character.findAll({
         include: [{
             model: Race,
@@ -66,7 +75,10 @@ router.get('/characters', async (req, res) => {
 });
     const characters = characterData.map(character => character.get({plain:true}));
     console.log(characters)
-    res.render('viewCharacters', {characters})
+    res.render('viewCharacters', {characters, logged_in: req.session.logged_in})
+    } else {
+        res.redirect('/')
+    }
 })
 
 module.exports = router
