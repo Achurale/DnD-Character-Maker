@@ -67,7 +67,7 @@
           <h3>Race</h3>
           <label for="race">Select a race</label>
           <select name="race" id="race">
-          {{#each Race as |race|}}    
+          {{#each race}}    
             <option>{{race.name}}</option>
           {{/each}}
           </select>
@@ -78,7 +78,7 @@
           <h3>Background</h3>
           <label for="background">Select a background</label>
           <select name="background" id="background">
-          {{#each Background as |background|}}                 {{!--passing in object from JS in controller--}}
+          {{#each background}}                 {{!--passing in object from JS in controller--}}
             <option>{{background.name}}</option>
           {{/each}}
           </select>
@@ -89,8 +89,8 @@
           <h3>Class</h3>
           <label for="class">Select a class</label>
           <select name="class" id="class">
-          {{#each Class as |class|}}    
-            <option>{{class.name}}</option>
+          {{#each role}}    
+            <option>{{role.name}}</option>
           {{/each}}
           </select>
           <p class="mt-2 border-top">Description placeholder</p>

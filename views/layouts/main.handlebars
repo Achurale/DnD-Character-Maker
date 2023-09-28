@@ -23,7 +23,7 @@
         <nav class="list-group">
           <div class="container row">
             <!-- Conditionally render login or logout links -->
-            <ul class="list-group list-group-horizontal right-justified">
+            <ul class="list-group list-group-horizontal justify-content-center">
               {{#if logged_in}}
               {{!-- <a href="/profile">profile</a> | --}}
               <li class="list-group-item bg-secondary"><button class="no-button" id="logout">Logout</button></li>
@@ -32,7 +32,7 @@
               {{/if}}
               <li><a href="/profile" class="list-group-item bg-secondary">Profile</a></li>
               <li><a href="/newCharacter" class="list-group-item bg-secondary">characterForm</a></li>
-              <li><a href="/characters" class="list-group-item bg-secondary">viewCharacters</a></li>
+              <li><a href="/characters" class="list-group-item bg-secondary rounded-end">viewCharacters</a></li>
             </ul>
           </div>
         </nav>
