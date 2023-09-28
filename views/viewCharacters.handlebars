@@ -1,70 +1,56 @@
-{{!--TO DO: Figure out the getting the data part. Add Styling
-            For the nav bar list element, when they get loaded 
-            turn each into an anchor or button element to pull up the data - Check DB and get info from there
---}}
+    <div class="container-fluid m-2 p-2">
+    
+        <div class="row border m-2 p-2 rounded-pill">
+            {{!-- Row 1 / Character Options --}}
+            <div class="row text-center">
+                <div class="col m-2 p-2">
+                    <div>Name</div>
+                    <div class="border-top">{{Character.name}}</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Level</div>
+                    <div class="border-top">MAXIMUM</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Race</div>
+                    <div class="border-top">Meow</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Background</div>
+                    <div class="border-top">Chuunibyou</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Class</div>
+                    <div class="border-top">The Holy One</div>
+                </div>
+            </div>
+            {{!-- Row 2 / Ability Scores --}}
+            <div class="row text-center">
+                <div class="col m-2 p-2">
+                    <div>Strength</div>
+                    <div class="border-top">17</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Dexterity</div>
+                    <div class="border-top">8</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Constitution</div>
+                    <div class="border-top">16</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Intelligence</div>
+                    <div class="border-top">10</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Wisdom</div>
+                    <div class="border-top">13</div>
+                </div>
+                <div class="col m-2 p-2">
+                    <div>Charisma</div>
+                    <div class="border-top">12</div>
+                </div>
+            </div>
+        </div>
 
-
-<div>       {{!--Row--}}
-    <div>       {{!--Col 1--}}
-        <nav>
-            <ul>
-                {{#each character as |character|}}              {{!--Gets list of characters created by this user--}}
-                    <li></li>                           {{!--Render (get) character id}}
-                    <button>View</button>
-                    <button>Delete</button>
-                {{/each}}              {{!--How can I access the information of that character in the other div element--}}
-            </ul>
-        </nav>
     </div>
-    <div>                   {{!--Col 2--}}
-        <div>
-            <h2>{{character.name}}</h2>
-            <p>{{level}}</p>                {{!--Look at Concat helper in Handlebars--}}
-        </div>
-
-        <div>
-            <nav>                           {{!--Horizontal list. Add spacing between each div--}}
-                <h2>{{race}}</h2>
-                <h2>{{class}}</h2>
-                <h2>{{background}}</h2>
-            </nav>
-        </div>
-
-        <div>
-            <h2>Abilities</h2>
-            <div>
-                <p>Strength</p>
-                <p>{{strength}}</p>         
-            </div>
-
-            <div>
-                <p>Dexterity</p>
-                <p>{{dexterity}}</p>
-            </div>
-
-            <div>
-                <p>Constitution</p>
-                <p>{{constitution}}</p>
-            </div>
-
-            <div>
-                <p>Intelligence</p>
-                <p>{{intelligence}}</p>
-            </div>
-
-            <div>
-                <p>Wisdom</p>
-                <p>{{wisdom}}</p>
-            </div>
-
-            <div>
-                <p>Charisma</p>
-                <p>{{charisma}}</p>
-            </div>
-        </div>
-
-        <div>
-            <button>Delete</button>
-        </div>
-    </div>
-</div>

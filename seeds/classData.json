@@ -1,18 +1,18 @@
 [
     {
         "name": "Cleric",
-        "description": "Lorem ipsum"
+        "description": "A priestly champion who wields divine magic in service of a higher power."
     },
     {
         "name": "Fighter",
-        "description": "Lorem ipsum"
+        "description": "A master of martial combat, skilled with a variety of weapons and armor."
     },
     {
         "name": "Rogue",
-        "description": "Lorem ipsum"
+        "description": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies."
     },
     {
         "name": "Wizard",
-        "description": "Lorem ipsum"
+        "description": "A scholarly magic-user capable of manipulating the structures of reality."
     }
 ]

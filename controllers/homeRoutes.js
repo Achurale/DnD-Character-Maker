@@ -19,6 +19,8 @@ router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
         return;
+    } else {
+        res.render('signUp')
     }
 });
 
@@ -34,11 +36,20 @@ router.get('/profile', (req, res) => {
 
 // route to make new character
 router.get('/newCharacter', (req, res) => {
-    res.render('characterForm')
+    res.render('characterForm',)
 })
 
 // route to view characters
-router.get('/characters', (req, res) => {
+router.get('/characters', async (req, res) => {
+    try {
+        const characterData = await Character.findAll();
+        console.log(characterData);
+        const character = characterData.get({ plain: true })
+        return res.status(200).json(character);
+    } catch (err) {
+    // error if there are no characters
+    res.status(400).json("Oops! Looks like you currently have no saved characters!")
+    }
     res.render('viewCharacters')
 })
 

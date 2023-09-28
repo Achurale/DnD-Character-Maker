@@ -2,18 +2,34 @@
 // ROUTES FOR THE CHARACTER LIST PAGE '/characters'
 
 const router = require('express').Router();
-const { Character } = require('../../models');
+const { Character, Race } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // ROUTE TO GET ALL CHARACTERS  
+
+router.get('/races', async (req, res) => {
+    try {
+        const raceData = await Race.findAll();
+        const race = raceData.get({ plain: true });
+        console.log(race)
+        return res.status(200).json(race)
+    } catch (err) {
+        res.status(400).json("can't get data")
+    }
+})
 // api/characters/characters
 router.get('/characters', async (req, res) => {
     try {
         // gets all characters to create list
-        const characterData = await Character.findAll();
-        console.log(characterData);
-        const character = characterData.get({ plain: true })
-        res.status(200).json(character);
+        const characterData = await Character.findAll(
+            {
+            where: {
+                user_id: 2
+            }}
+            );
+        const character = characterData.get({ plain: true });
+        console.log(character)
+        return res.status(200).json(character);
     } catch (err) {
         // error if there are no characters
         res.status(400).json("Oops! Looks like you currently have no saved characters!")
