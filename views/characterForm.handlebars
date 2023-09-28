@@ -65,11 +65,11 @@
           <label for="race">Select a race</label>
           <select name="race" id="race">
           {{#each race}}    
-          <option>{{this.race.name}}</option>
+          <option>{{this.name}}</option>
           {{/each}}
           </select>
           {{#each race}}
-          <p class="mt-2 border-top">{{this.race.description}}</p>
+          <p class="mt-2 border-top">{{this.description}}</p>
           {{/each}}
         </div>
 
@@ -78,11 +78,11 @@
           <label for="background">Select a background</label>
           <select name="background" id="background">
           {{#each background}}                 {{!--passing in object from JS in controller--}}
-          <option>{{this.background.name}}</option>
+          <option>{{this.name}}</option>
           {{/each}}
           </select>
           {{#each background}}
-          <p class="mt-2 border-top">{{this.background.description}}</p>
+          <p class="mt-2 border-top">{{this.description}}</p>
           {{/each}}
         </div>
 
@@ -91,11 +91,11 @@
           <label for="class">Select a class</label>
           <select name="class" id="class">
           {{#each role}}    
-          <option>{{this.role.name}}</option>
+          <option>{{this.name}}</option>
           {{/each}}
           </select>
           {{#each role}}
-          <p class="mt-2 border-top">{{this.class.description}}</p>
+          <p class="mt-2 border-top">{{this.description}}</p>
           {{/each}}
         </div>
       </div>
