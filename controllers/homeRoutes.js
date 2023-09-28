@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Character, User, Class, Background, Race} = require('../models');
+const { Character, User, Role, Background, Race} = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -36,9 +36,17 @@ router.get('/profile', (req, res) => {
 
 // route to make new character
 router.get('/newCharacter', async (req, res) => {
-    const roleData = await Class.findAll();
+    const roleData = await Role.findAll();
+    const role = roleData.map(role => role.get({plain:true}));
+
     const backgroundData = await Background.findAll();
+    const background = backgroundData.map(background => background.get({plain:true}));
+
     const raceData = await Race.findAll();
+    const race = raceData.map(race => race.get({plain:true}));
+    console.log(race)
+    console.log(background)
+    console.log(role)
     res.render('characterForm', {role, background, race})
 })
 
@@ -49,7 +57,7 @@ router.get('/characters', async (req, res) => {
             model: Race,
             attributes: ['name']
         },{
-            model: Class,
+            model: Role,
             attributes: ['name']
         },{
             model: Background,
