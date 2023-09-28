@@ -21,18 +21,20 @@ router.get('/races', async (req, res) => {
 router.get('/characters', async (req, res) => {
     try {
         // gets all characters to create list
+        
         const characterData = await Character.findAll(
             {
             where: {
                 user_id: 2
             }}
             );
-        const character = characterData.get({ plain: true });
-        console.log(character)
-        return res.status(200).json(character);
+        // const characters = characterData.get({ plain: true });
+        const characters = characterData.map(character => character.get({plain:true}));
+        console.log(characterData)
+        return res.status(200).json(characters);
     } catch (err) {
         // error if there are no characters
-        res.status(400).json("Oops! Looks like you currently have no saved characters!")
+        res.status(400).json(err)
     }
 });
 
@@ -45,7 +47,7 @@ router.get('/characters/:id', async (req, res) => {
         console.log(characterIdData)
         const characterId = characterIdData.get({ plain: true })
         res.status(200).json(characterId);
-        // error if character id doens't exist
+        // error if character id doesn't exist
     } catch (err) {
         res.status(400).json("Oops! Looks like this character id does not exist.")
     }
