@@ -39,7 +39,7 @@ router.get('/newCharacter', async (req, res) => {
     const roleData = await Class.findAll();
     const backgroundData = await Background.findAll();
     const raceData = await Race.findAll();
-    res.render('characterForm', {role, background, race})
+    res.render('characterForm', {roleData, backgroundData, raceData})
 })
 
 // route to view characters
