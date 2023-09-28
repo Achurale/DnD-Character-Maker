@@ -11,7 +11,6 @@ router.get('/races', async (req, res) => {
     try {
         const raceData = await Race.findAll();
         const race = raceData.get({ plain: true });
-        console.log(race)
         return res.status(200).json(race)
     } catch (err) {
         res.status(400).json("can't get data")
