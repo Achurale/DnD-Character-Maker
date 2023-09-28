@@ -44,8 +44,13 @@ router.get('/newCharacter', async (req, res) => {
 
 // route to view characters
 router.get('/characters', async (req, res) => {
-    const characters = await Character.findAll();
-    res.render('viewCharacters', {characters})
+    try{
+        const characterData = await Character.findAll();
+        const characters = characterData.get({ plain: true }); 
+        res.render('viewCharacters', {...characters})
+    } catch (err) {
+        res.status(500).json(err);
+    }
 })
 
 module.exports = router

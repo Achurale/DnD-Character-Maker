@@ -27,6 +27,7 @@ router.get('/characters', async (req, res) => {
                 user_id: 2
             }}
             );
+        // console.log(characterData)
         const character = characterData.get({ plain: true });
         console.log(character)
         return res.status(200).json(character);
