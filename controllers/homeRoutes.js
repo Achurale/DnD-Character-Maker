@@ -3,6 +3,11 @@ const { Character, User, Role, Background, Race} = require('../models');
 const withAuth = require('../utils/auth');
 
 
+// route for homepage
+router.get('/', (req, res) => {
+    res.render('homepage')
+});
+
 // login route for login page
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
@@ -23,12 +28,6 @@ router.get('/signup', (req, res) => {
         res.render('signUp')
     }
 });
-
-// route for homepage
-router.get('/', (req, res) => {
-    res.render('homepage')
-});
-
 // route for choices screen
 router.get('/profile', (req, res) => {
     res.render('profile')
