@@ -27,12 +27,12 @@
               {{#if logged_in}}
               {{!-- <a href="/profile">profile</a> | --}}
               <li class="list-group-item bg-secondary"><button class="no-button" id="logout">Logout</button></li>
-              {{else}}
-              <li class="list-group-item bg-secondary"><a href="/login" id="login">Login</a></li>
-              {{/if}}
               <li><a href="/profile" class="list-group-item bg-secondary">Profile</a></li>
               <li><a href="/newCharacter" class="list-group-item bg-secondary">characterForm</a></li>
               <li><a href="/characters" class="list-group-item bg-secondary rounded-end">viewCharacters</a></li>
+              {{else}}
+              <li class="list-group-item bg-secondary"><a href="/login" id="login">Login</a></li>
+              {{/if}}
             </ul>
           </div>
         </nav>
