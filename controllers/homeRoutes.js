@@ -36,15 +36,28 @@ router.get('/profile', (req, res) => {
 
 // route to make new character
 router.get('/newCharacter', async (req, res) => {
-    const role = await Class.findAll();
-    const background = await Background.findAll();
-    const race = await Race.findAll();
+    const roleData = await Class.findAll();
+    const backgroundData = await Background.findAll();
+    const raceData = await Race.findAll();
     res.render('characterForm', {role, background, race})
 })
 
 // route to view characters
 router.get('/characters', async (req, res) => {
-    const characters = await Character.findAll();
+    const characterData = await Character.findAll({
+        include: [{
+            model: Race,
+            attributes: ['name']
+        },{
+            model: Class,
+            attributes: ['name']
+        },{
+            model: Background,
+            attributes: ['name']
+        }]
+});
+    const characters = characterData.map(character => character.get({plain:true}));
+    console.log(characters)
     res.render('viewCharacters', {characters})
 })
 

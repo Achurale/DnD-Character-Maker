@@ -15,32 +15,32 @@ Character.belongsTo(User, {
 });
 // ------------------------------
 // One race to one character
-Character.hasOne(Race, {
+Character.belongsTo(Race, {
   foreignKey: 'race_id',
   onDelete: 'CASCADE'
 });
 
-Race.belongsTo(Character, {
+Race.hasMany(Character, {
   foreignKey: 'race_id'
 });
 // -------------------------------
 // One class to one character
-Character.hasOne(Class, {
+Character.belongsTo(Class, {
   foreignKey: 'class_id',
   onDelete: 'CASCADE'
 });
 
-Class.belongsTo(Character, {
+Class.hasMany(Character, {
   foreignKey: 'class_id'
 });
 // ---------------------------------
 // One background to one character
-Character.hasOne(Background, {
+Character.belongsTo(Background, {
   foreignKey: 'background_id',
   onDelete: 'CASCADE'
 });
 
-Background.belongsTo(Character, {
+Background.hasMany(Character, {
   foreignKey: 'background_id'
 });
 
