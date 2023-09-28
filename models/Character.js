@@ -21,12 +21,12 @@ Character.init(
             key: 'id'
         }
       },
-      class_id: {
+      role_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         foreignKey: true,
         references: {
-            model: 'class',
+            model: 'role',
             key: 'id'
         }
       },

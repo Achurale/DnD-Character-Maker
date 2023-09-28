@@ -1,7 +1,7 @@
 [
     {
         "race_id": 1,
-        "class_id": 2,
+        "role_id": 2,
         "level": 1,
         "background_id": 3,
         "name": "Seabeard McStuffins",
@@ -15,7 +15,7 @@
     },
     {
         "race_id": 2,
-        "class_id": 4,
+        "role_id": 4,
         "level": 1,
         "background_id": 1,
         "name": "Rayla Vinnian",
@@ -29,7 +29,7 @@
     },
     {
         "race_id": 4,
-        "class_id": 3,
+        "role_id": 3,
         "level": 1,
         "background_id": 2,
         "name": "Vik Mogor",
@@ -43,7 +43,7 @@
     },
     {
         "race_id": 2,
-        "class_id": 2,
+        "role_id": 2,
         "level": 1,
         "background_id": 4,
         "name": "Hyon Elrim",

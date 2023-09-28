@@ -1,7 +1,7 @@
 const User = require('./User');
 const Character = require('./Character');
 const Race = require('./Race');
-const Class = require('./Class');
+const Role = require('./Class');
 const Background = require('./Background');
 
 // many character to one user
@@ -25,13 +25,13 @@ Race.hasMany(Character, {
 });
 // -------------------------------
 // One class to one character
-Character.belongsTo(Class, {
-  foreignKey: 'class_id',
+Character.belongsTo(Role, {
+  foreignKey: 'role_id',
   onDelete: 'CASCADE'
 });
 
-Class.hasMany(Character, {
-  foreignKey: 'class_id'
+Role.hasMany(Character, {
+  foreignKey: 'role_id'
 });
 // ---------------------------------
 // One background to one character
@@ -46,4 +46,4 @@ Background.hasMany(Character, {
 
 
 
-module.exports = { User, Character, Race, Class, Background };
+module.exports = { User, Character, Race, Role, Background };
