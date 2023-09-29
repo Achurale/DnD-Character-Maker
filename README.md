@@ -1,4 +1,4 @@
-# Note Taker App
+# DND Character Maker
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
