@@ -42,6 +42,8 @@ No installations required, just use the heroku app!
 
 ## Usage 
 
+Click [here](https://sleepy-lowlands-19789-21c58ef94b5b.herokuapp.com/) to view our heroku app.
+
 First you must make an account by click on 'Sign Up!' and then fill out the form. Once you sign up, you can login! On the profile tab, you can choose to either view saved characters or to create a new one! When making a new character, you will be able to fill out the character's name, level and stats by typing in your own values. For the race, class, and background, you can choose from several options! When you are done, hit save. Now you should be able to view your characters! If you'd like to sign out, hit the 'loggout' button.
 
 ## License
